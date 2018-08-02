@@ -2,7 +2,8 @@ var socket = io.connect(window.location.hostname);
 
 socket.on('value', function (data) {
     //$('#count').html(data.value);
-    document.getElementById('count').innerHTML = data.value + " " + document.getElementById('count').innerHTML;
+    if(data.value!=0)
+    	document.getElementById('count').innerHTML = data.value + " | " + document.getElementById('count').innerHTML;
     
 });
 
@@ -15,5 +16,7 @@ $('#stop').click(function() {
 });
 
 $('#reset').click(function() {
+	socket.emit('click:stop');
     socket.emit('click:reset');
+    document.getElementById('count').innerHTML = " - ";
 });
