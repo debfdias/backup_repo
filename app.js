@@ -2,7 +2,6 @@ var express = require('express'),
     app = module.exports = express.createServer(express.logger()),
     io = require('socket.io').listen(app);
     Counter = require('./models/counter'),
-    favicon = require('serve-favicon'),
     path = require('path'),
     routes = require('./routes');
 
