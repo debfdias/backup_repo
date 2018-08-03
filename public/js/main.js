@@ -20,3 +20,9 @@ $('#reset').click(function() {
     socket.emit('click:reset');
     document.getElementById('count').innerHTML = " - ";
 });
+
+$('#refresh').click(function() {
+	socket.emit('click:reset');
+    document.getElementById('count').innerHTML = " - ";
+    socket.emit('click:start');
+});
