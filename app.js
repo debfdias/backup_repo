@@ -15,7 +15,7 @@ app.configure(function() {
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
-  app.use(favicon(path.join(__dirname, '/public/assets/ico', 'favicon.png')))
+  app.use(favicon(path.join(__dirname, '/public/assets/ico', 'favicon.png')));
 });
 
 app.configure('development', function() {
